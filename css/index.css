@@ -1,0 +1,162 @@
+/* Color Palette & Variables */
+:root {
+    --bg-color: #fdfcfb;       /* Soft, organic off-white */
+    --text-color: #1a1a1a;     /* Deep charcoal */
+    --text-muted: #5a6065;     /* Muted grey for descriptions */
+    --accent-color: #2b4c3f;   /* Elegant Sage Green */
+    --border-light: #e6e3df;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Inter', system-ui, sans-serif;
+    --transition: all 0.3s ease;
+}
+
+/* Base Settings */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 80px 20px;
+    line-height: 1.6;
+}
+
+.menu-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Header Section styling */
+.menu-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.menu-header .subtitle {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+}
+
+.menu-header h1 {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin: 12px 0;
+}
+
+.menu-header .tagline {
+    font-style: italic;
+    color: var(--text-muted);
+}
+
+/* Nav tabs using Flexbox */
+.menu-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    border-top: 1px solid var(--border-light);
+    border-bottom: 1px solid var(--border-light);
+    padding: 15px 0;
+    margin-bottom: 60px;
+}
+
+.menu-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+}
+
+.menu-nav a:hover {
+    color: var(--accent-color);
+}
+
+/* Main Sections Stack */
+.menu-sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+}
+
+/* Specific Course Headings */
+.section-title {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 8px;
+    margin-bottom: 30px;
+}
+
+/* Responsive Course Grid utilizing Grid auto-fit */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px 30px;
+}
+
+/* Individual Card Structure using Flexbox columns */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+/* Title and Pricing line using Flexbox Row alignment */
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.item-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.item-price {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.item-description {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Mobile Breakpoints */
+@media (max-width: 600px) {
+    body {
+        padding: 40px 15px;
+    }
+
+    .menu-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .menu-nav {
+        gap: 20px;
+    }
+
+    .items-grid {
+        grid-template-columns: 1fr; /* Force 1 column on tight mobile widths */
+    }
+}
